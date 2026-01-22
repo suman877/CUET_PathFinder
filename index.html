@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CUET Subject Selection Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- LANDING -->
+  <section class="card active" id="landing">
+    <h1>CUET-UG Subject Selection Assistant</h1>
+    <p>A smart academic counselor built for CUET aspirants</p>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="goToCount()">Start Assessment</button>
+  </section>
+
+  <!-- SUBJECT COUNT -->
+  <section class="card" id="count">
+    <h2>How many subjects do you want to choose?</h2>
+    <input type="range" min="1" max="10" value="5" id="countSlider">
+    <p><strong><span id="countValue">5</span></strong> Subjects</p>
+    <p class="note">Recommendations will follow CUET rules across Languages, Domain Subjects & General Test.</p>
+    <button onclick="startAssessment()">Continue</button>
+  </section>
+
+  <!-- ASSESSMENT -->
+  <section class="card" id="assessment">
+    <h2 id="questionText"></h2>
+    <div id="options"></div>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <button onclick="nextQuestion()">Next</button>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="card" id="results">
+    <h2 id="resultHeading"></h2>
+
+    <div class="result-card">
+      <h3>Recommendation 1</h3>
+      <div id="rec1"></div>
+      <p id="reason1"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Recommendation 2</h3>
+      <div id="rec2"></div>
+      <p id="reason2"></p>
+    </div>
+
+    <button onclick="location.reload()">Retake Assessment</button>
+
+    <footer>
+      Built by <strong>Suman Saurabh</strong> to assist CUET subject selection for students and help humanity grow.
+    </footer>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
